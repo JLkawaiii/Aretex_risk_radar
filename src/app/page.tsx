@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 
 const Page = () => {
   // Add state to manually track hover for fallback
@@ -26,8 +27,8 @@ const Page = () => {
 
         {/* Navigation Links - Updated with better hover effects */}
         <nav className="flex items-center space-x-6 z-10">
-          <a
-            href="#about"
+          <Link
+            href="/user/about"
             className={`text-gray-600 hover:text-orange-500 relative px-2 py-1 transition-colors duration-200 ${
               isAboutHovered ? "text-orange-500" : ""
             }`}
@@ -41,7 +42,7 @@ const Page = () => {
                 transform: isAboutHovered ? "scaleX(1)" : "scaleX(0)",
               }}
             ></span>
-          </a>
+          </Link>
         </nav>
       </header>
 
@@ -65,9 +66,12 @@ const Page = () => {
             Making Aretex family safe by Predicting and Mapping High-Risk Areas
             Using Spatiotemporal Data Trends
           </p>
-          <button className="mt-6 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-200">
+          <Link
+            href="/user/signin"
+            className="mt-6 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-200 inline-block"
+          >
             Get started
-          </button>
+          </Link>
         </div>
 
         {/* Radar Image */}

@@ -3,12 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link"; // Import Link from next/link
 import { usePathname } from "next/navigation"; // Import usePathname to determine current route
-import {
-  FaTachometerAlt,
-  FaFileAlt,
-  FaUsers,
-  FaUserCircle,
-} from "react-icons/fa";
+import { FaTachometerAlt, FaFileAlt, FaUserCircle } from "react-icons/fa";
 
 const Sidebar = () => {
   const pathname = usePathname(); // Get current path
@@ -32,7 +27,7 @@ const Sidebar = () => {
         <ul className="space-y-2">
           <li>
             <Link
-              href="/admin/dashboard"
+              href="/user/dashboard"
               onClick={() => setSelectedItem("Dashboard")}
               className={`flex items-center px-6 py-3 transition-colors ${
                 selectedItem === "Dashboard"
@@ -50,7 +45,7 @@ const Sidebar = () => {
           </li>
           <li>
             <Link
-              href="/admin/reportpage"
+              href="/user/reportpage"
               onClick={() => setSelectedItem("Crime Reports")}
               className={`flex items-center px-6 py-3 transition-colors ${
                 selectedItem === "Crime Reports"
@@ -68,28 +63,10 @@ const Sidebar = () => {
           </li>
           <li>
             <Link
-              href="/admin/management"
+              href="/user/profile"
               onClick={() => setSelectedItem("User Management")}
               className={`flex items-center px-6 py-3 transition-colors ${
                 selectedItem === "User Management"
-                  ? "bg-gray-100 text-orange-500"
-                  : "text-gray-800 hover:bg-gray-100 hover:text-orange-500"
-              }`}
-            >
-              <FaUsers
-                className={`mr-3 ${
-                  selectedItem === "User Management" ? "text-orange-500" : ""
-                }`}
-              />
-              <span>User Management</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/admin/profile"
-              onClick={() => setSelectedItem("Profile")}
-              className={`flex items-center px-6 py-3 transition-colors ${
-                selectedItem === "Profile"
                   ? "bg-gray-100 text-orange-500"
                   : "text-gray-800 hover:bg-gray-100 hover:text-orange-500"
               }`}

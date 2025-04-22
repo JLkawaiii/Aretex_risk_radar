@@ -46,7 +46,7 @@ const Header = () => {
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             className="flex items-center px-4 py-1 bg-orange-500 text-white font-semibold rounded-lg shadow-md"
           >
-            Admin
+            User
             <FaChevronDown className="ml-2" />
           </button>
 
